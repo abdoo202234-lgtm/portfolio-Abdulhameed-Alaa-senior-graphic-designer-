@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!-- 
+  Abd-Ulhameed's Portfolio
+  Created as a single HTML file using Tailwind CSS and JavaScript.
+  Language: English
+  Theme: Orange & Black
+-->
+<html lang="en" dir="ltr" class="scroll-smooth" style="scroll-padding-top: 6rem;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abd-Ulhameed Portfolio | Graphic Designer</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Load Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <script>
+      // Setup Tailwind to use Inter font
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    
+    <style>
+      /* Custom styles for the animated spinning circle */
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin 20s linear infinite;
+      }
+      
+      /* New Tab Styles */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+    </style>
+</head>
+<body class="bg-zinc-900 text-gray-100 font-sans antialiased">
+
+    <!-- ======================= -->
+    <!-- Navigation -->
+    <!-- ======================= -->
+    <nav class="sticky top-0 z-50 bg-zinc-900/80 backdrop-blur-md shadow-lg">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          
+          <!-- Logo -->
+          <a href="#home" class="text-3xl font-bold text-orange-400">Abd-Ulhameed</a>
+          
+          <!-- Desktop Nav -->
+          <ul class="hidden md:flex space-x-8">
+            <li><a href="#home" class="nav-link text-lg font-medium text-gray-200 hover:text-orange-400 transition-colors duration-300">Home</a></li>
+            <li><a href="#about" class="nav-link text-lg font-medium text-gray-200 hover:text-orange-400 transition-colors duration-300">About</a></li>
+            <li><a href="#services" class="nav-link text-lg font-medium text-gray-200 hover:text-orange-400 transition-colors duration-300">Services</a></li>
+            <li><a href="#portfolio" class="nav-link text-lg font-medium text-gray-200 hover:text-orange-400 transition-colors duration-300">Portfolio</a></li>
+            <li><a href="#contact" class="nav-link text-lg font-medium text-gray-200 hover:text-orange-400 transition-colors duration-300">Contact</a></li>
+          </ul>
+          
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" class="md:hidden z-50">
+            <i data-feather="menu" class="w-7 h-7 text-white"></i>
+          </button>
+          
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-zinc-900 flex flex-col items-center justify-center space-y-8 z-40">
+        <a href="#home" class="nav-link-mobile text-3xl font-bold text-gray-200 hover:text-orange-400 transition-colors duration-300">Home</a>
+        <a href="#about" class="nav-link-mobile text-3xl font-bold text-gray-200 hover:text-orange-400 transition-colors duration-300">About</a>
+        <a href="#services" class="nav-link-mobile text-3xl font-bold text-gray-200 hover:text-orange-400 transition-colors duration-300">Services</a>
+        <a href="#portfolio" class="nav-link-mobile text-3xl font-bold text-gray-200 hover:text-orange-400 transition-colors duration-300">Portfolio</a>
+        <a href="#contact" class="nav-link-mobile text-3xl font-bold text-gray-200 hover:text-orange-400 transition-colors duration-300">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ======================= -->
+    <!-- Hero Section -->
+    <!-- ======================= -->
+    <section id="home" class="min-h-[calc(100vh-5rem)] flex items-center py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-8">
+          
+          <!-- Profile Image -->
+          <div class="md:w-1/2 flex justify-center order-1 md:order-2">
+            <img src="a_hyperrealistic_studio_portrait_of_a_middle-_1_.png" 
+                 alt="Abd-Ulhameed headshot"
+                 class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-zinc-800 shadow-2xl">
+          </div>
+          
+          <!-- Hero Text -->
+          <div class="md:w-1/2 text-center md:text-left order-2 md:order-1">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+               Senior Graphic Designer
+              <span class="block text-orange-400">& visual identity creator
+</span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-300 max-w-lg mx-auto md:mx-0">
+              Hi, I’m Abd-Ulhameed — a freelance graphic designer, creative maker, and visual storyteller.
+            </p>
+            
+            <!-- Skill Icons -->
+            <div class="mt-10">
+              <h3 class="text-lg font-semibold text-gray-400">High knowledge on creative fields</h3>
+              <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
+                
+                <div class="flex flex-col items-center justify-center p-4 bg-zinc-800 rounded-lg shadow-lg w-32 h-32 hover:bg-orange-500 hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
+                <img src="B.png" alt="billboard icon" class="mx-auto w-12 h-12 group-hover:opacity-90 transition-all duration-300">
+                  <span class="mt-2 text-sm font-medium group-hover:text-white transition-colors duration-300">Branding</span>
+                </div>
+                
+            <div class="flex flex-col items-center justify-center p-4 bg-zinc-800 rounded-lg shadow-lg w-32 h-32 hover:bg-orange-500 hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
+                <img src="E.png" alt="billboard icon" class="mx-auto w-12 h-12 group-hover:opacity-90 transition-all duration-300">
+                  <span class="mt-2 text-sm font-medium group-hover:text-white transition-colors duration-300">Social Media</span>
+                </div>
+                
+                
+                  <div class="flex flex-col items-center justify-center p-4 bg-zinc-800 rounded-lg shadow-lg w-32 h-32 hover:bg-orange-500 hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
+                <img src="D.png" alt="billboard icon" class="mx-auto w-12 h-12 group-hover:opacity-90 transition-all duration-300">
+                  <span class="mt-2 text-sm font-medium group-hover:text-white transition-colors duration-300">static ADS</span>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- ======================= -->
+    <!-- About Me Section -->
+    <!-- ======================= -->
+    <section id="about" class="py-24 bg-zinc-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          
+          <!-- Image + Spinning Circle -->
+          <div class="lg:w-5/12 flex justify-center relative">
+            <img src="Whisk_f579d8a8c86fe72b7c64097009637a7ddr.jpeg.jpg" 
+                 alt="Abd-Ulhameed working"
+                 class="rounded-lg shadow-2xl w-full max-w-sm object-cover">
+            
+            <!-- Spinning Circle -->
+            <div class="absolute -bottom-12 -left-12 w-40 h-40 hidden md:block">
+              <!-- Animated frame -->
+              <div class="absolute inset-0 border-4 border-dashed border-orange-400 rounded-full animate-spin-slow"></div>
+              <!-- Static text circle -->
+              <div class="absolute inset-2 bg-zinc-700 rounded-full flex items-center justify-center text-center p-4 shadow-lg">
+                <span class="font-bold text-sm text-white leading-tight">
+                  8+ YEARS OF
+                  <span class="block text-orange-300">BEST WORK</span>
+                  EXPERIENCE
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- About Text -->
+          <div class="lg:w-7/12 text-center lg:text-left">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-6">
+              A Passionate Senior Graphic Designer and visual identity creator
+            </h2>
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+              I'm a passionate graphic designer with over 5 years of experience in the design field. I started young, exploring the world of visuals and creativity, and quickly turned that passion into a professional journey.
+            </p>
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+              Over the years, I’ve worked with advertising agencies, international clients, and local businesses developing a strong skill set in:
+            </p>
+            
+            <!-- Skills List -->
+            <ul class="space-y-3 text-lg text-gray-300 list-disc list-inside mb-8 ml-4">
+              <li><span class="font-semibold text-orange-300">Branding & Visual Identity</span></li>
+              <li><span class="font-semibold text-orange-300">Social Media Design</span></li>
+              <li><span class="font-semibold text-orange-300">Digital & Print Advertising</span></li>
+              <li><span class="font-semibold text-orange-300">Layouts, Posters, and Campaigns</span></li>
+            </ul>
+            
+            <!-- Signature & Button -->
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap">
+
+<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-between gap-6 mt-10">
+  
+  <img 
+    src="ؤلتعن لؤر.png" 
+    alt="Abdulhameed signature" 
+    class="h-20 object-contain"
+  >
+
+  
+
+</div>
+
+
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= -->
+    <!-- Services Section -->
+    <!-- ======================= -->
+    <section id="services" class="py-24">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-extrabold text-center mb-16">Services I Provide</h2>
+        
+        <div class="flex flex-col lg:flex-row gap-16">
+          
+          <!-- Skill Bars -->
+          <div class="lg:w-1/2 space-y-8">
+            <!-- Skill 1 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-lg font-semibold">photoshop</span>
+                <span class="text-lg font-semibold text-orange-300">90%</span>
+              </div>
+              <div class="w-full bg-zinc-700 rounded-full h-3 group">
+                <div class="bg-orange-500 h-3 rounded-full shadow-lg shadow-orange-500/30 transition-all duration-500 ease-out group-hover:shadow-orange-500/50" style="width: 90%"></div>
+              </div>
+            </div>
+            <!-- Skill 2 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-lg font-semibold">illustrator</span>
+                <span class="text-lg font-semibold text-orange-300">90%</span>
+              </div>
+              <div class="w-full bg-zinc-700 rounded-full h-3 group">
+                <div class="bg-orange-500 h-3 rounded-full shadow-lg shadow-orange-500/30 transition-all duration-500 ease-out group-hover:shadow-orange-500/50" style="width: 90%"></div>
+              </div>
+            </div>
+            <!-- Skill 3 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-lg font-semibold">in design</span>
+                <span class="text-lg font-semibold text-orange-300">60%</span>
+              </div>
+              <div class="w-full bg-zinc-700 rounded-full h-3 group">
+                <div class="bg-orange-500 h-3 rounded-full shadow-lg shadow-orange-500/30 transition-all duration-500 ease-out group-hover:shadow-orange-500/50" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Service Cards -->
+          <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <div class="bg-zinc-800 p-8 rounded-lg shadow-lg text-center hover:bg-zinc-700 hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group">
+                <img src="B.png" alt="billboard icon" class="mx-auto w-12 h-12 group-hover:opacity-90 transition-all duration-300">
+              <h3 class="mt-5 text-xl font-semibold">Logo Design & Branding</h3>
+            </div>
+            
+            <div class="bg-zinc-800 p-8 rounded-lg shadow-lg text-center hover:bg-zinc-700 hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group">
+                <img src="E.png" alt="billboard icon" class="mx-auto w-12 h-12 group-hover:opacity-90 transition-all duration-300">
+              <h3 class="mt-5 text-xl font-semibold">Social Media Design</h3>
+            </div>
+            
+            <div class="bg-zinc-800 p-8 rounded-lg shadow-lg text-center hover:bg-zinc-700 hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group">
+                <img src="C.png" alt="billboard icon" class="mx-auto w-12 h-12 group-hover:opacity-90 transition-all duration-300">
+
+              <h3 class="mt-5 text-xl font-semibold">Print Design</h3>
+            </div>
+            
+      <div class="bg-zinc-800 p-8 rounded-lg shadow-lg text-center hover:bg-zinc-700 hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group">
+  
+  <img src="billboard_10758825-01.png" alt="billboard icon" class="mx-auto w-12 h-12 group-hover:opacity-90 transition-all duration-300">
+
+  <h3 class="mt-5 text-xl font-semibold">Outdoor Advertising</h3>
+             </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= -->
+    <!-- Portfolio Section -->
+    <!-- ======================= -->
+    <section id="portfolio" class="py-24 bg-zinc-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-extrabold text-center mb-12 max-w-2xl mx-auto">
+          Each Design is a unique piece of development
+        </h2>
+        
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button class="portfolio-tab active-tab text-lg font-semibold py-2 px-6 rounded-lg bg-orange-500 text-white transition-all duration-300" data-tab="logos">Logos</button>
+          <button class="portfolio-tab text-lg font-semibold py-2 px-6 rounded-lg bg-zinc-700 text-gray-300 hover:bg-orange-500 hover:text-white transition-all duration-300" data-tab="outdoor">Outdoor</button>
+          <button class="portfolio-tab text-lg font-semibold py-2 px-6 rounded-lg bg-zinc-700 text-gray-300 hover:bg-orange-500 hover:text-white transition-all duration-300" data-tab="printing">Printing</button>
+          <button class="portfolio-tab text-lg font-semibold py-2 px-6 rounded-lg bg-zinc-700 text-gray-300 hover:bg-orange-500 hover:text-white transition-all duration-300" data-tab="social">Social Media</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="portfolio-content">
+          
+          <!-- Logos Tab Content (Visible by default) -->
+          <div id="logos" class="portfolio-tab-content grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fadeIn">
+            <!-- 4 images as 2x2 grid -->
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="Nuba-01.jpg" alt="Logo 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="Pronto Cafe-01.jpg" alt="Logo 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="skillup-01.jpg" alt="Logo 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="عم حماده-01-01.jpg" alt="Logo 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+          </div>
+
+          <!-- Outdoor Tab Content (Hidden by default) -->
+          <div id="outdoor" class="portfolio-tab-content grid grid-cols-1 sm:grid-cols-2 gap-6 hidden">
+            <!-- 4 images -->
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="df9978171289337.646c8c1c34481.jpg" alt="Outdoor 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="billboardmkp.jpg" alt="Outdoor 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="8693112.jpg" alt="Outdoor 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="8607175.jpg" alt="Outdoor 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+          </div>
+
+          <!-- Printing Tab Content (Hidden by default) -->
+          <div id="printing" class="portfolio-tab-content grid grid-cols-1 sm:grid-cols-2 gap-6 hidden">
+            <!-- 4 images -->
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="1v_24 .jpg" alt="Print 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="trifold_6.jpg" alt="Print 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+             <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="15M_050 copy 2.jpg" alt="Print 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="horizontal-brochure-mockup.jpg" alt="Print 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+          </div>
+          
+          <!-- Social Media Tab Content (Hidden by default) -->
+          <div id="social" class="portfolio-tab-content grid grid-cols-1 sm:grid-cols-2 gap-6 hidden">
+            <!-- 4 images -->
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="A.jpg" alt="Social 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="B.jpg" alt="Social 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="carosel mc.png" alt="Social 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer aspect-w-4 aspect-h-3">
+              <img src="FB COVER MC.jpg" alt="Social 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      REMOVED SECTIONS:
+      - Video CTA
+      - Testimonials
+      - News
+    -->
+
+    <!-- ======================= -->
+    <!-- Contact Section -->
+    <!-- ======================= -->
+    <section id="contact" class="py-24">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-extrabold text-center mb-6 max-w-3xl mx-auto">
+          Feel free to contact me if any assistance is needed in the future.
+        </h2>
+        <p class="text-center text-lg text-gray-400 mb-16">I'm here to help turn your ideas into reality.</p>
+        
+        <div class="flex flex-col lg:flex-row gap-12 bg-zinc-800 p-8 md:p-12 rounded-lg shadow-2xl">
+          
+          <!-- Contact Info & Form -->
+          <div class="lg:w-1/2">
+            <div class="space-y-6">
+              <!-- Location -->
+              <div class="flex items-start gap-4">
+                <div class="bg-orange-500/20 text-orange-400 p-3 rounded-full">
+                  <i data-feather="map-pin" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-semibold">Location</h4>
+                  <p class="text-gray-300">Egypt, Cairo, Nasr City</p>
+                </div>
+              </div>
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <div class="bg-orange-500/20 text-orange-400 p-3 rounded-full">
+                  <i data-feather="phone" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-semibold">Phone</h4>
+                  <p class="text-gray-300">01559553152</p>
+                </div>
+              </div>
+              <!-- Mail -->
+              <div class="flex items-start gap-4">
+                <div class="bg-orange-500/20 text-orange-400 p-3 rounded-full">
+                  <i data-feather="mail" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-semibold">Mail</h4>
+                  <p class="text-gray-300">abdoo202274@gmail.com</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <form class="space-y-5 mt-10">
+              <input type="text" placeholder="Full Name" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors">
+              <input type="email" placeholder="Email Address" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors">
+              <textarea placeholder="Your Message..." rows="5" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors resize-none"></textarea>
+              <button type="submit" class="w-full bg-orange-500 text-white text-lg font-semibold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 hover:shadow-orange-500/50 transition-all duration-300 transform hover:-translate-y-1">
+                Send Message
+              </button>
+            </form>
+          </div>
+          
+         <!-- Map (with image) -->
+<div class="lg:w-1/2 min-h-[400px] lg:min-h-full rounded-lg overflow-hidden shadow-inner relative">
+    <img src="يشسبش.png" 
+         alt="map section image" 
+         class="w-full h-full object-cover">
+</div>
+
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= -->
+    <!-- Footer -->
+    <!-- ======================= -->
+    <footer class="py-10 bg-zinc-950 text-center text-gray-500">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-lg">&copy; 2025 Abd-Ulhameed. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- ======================= -->
+    <!-- Portfolio Modal -->
+    <!-- ======================= -->
+    <div id="portfolio-modal" class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden transition-opacity duration-300">
+      
+      <div class="bg-zinc-800 rounded-lg shadow-2xl max-w-lg w-full relative p-8 md:p-12 text-center transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+        <!-- Close Button -->
+        <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+          <i data-feather="x" class="w-8 h-8"></i>
+        </button>
+        
+        <!-- Error Message -->
+        <div class="text-red-400">
+          <i data-feather="video-off" class="w-20 h-20 mx-auto mb-6"></i>
+          <h3 class="text-3xl font-bold mb-3 text-white">Sorry, this video does not exist.</h3>
+          <p class="text-lg text-red-300">"Sorry, This video does not exist."</p>
+        </div>
+        
+      </div>
+      
+    </div>
+
+    <!-- ======================= -->
+    <!-- JavaScript -->
+    <!-- ======================= -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        // Activate Feather Icons
+        try {
+          feather.replace();
+        } catch (e) {
+          console.error('Feather Icons failed to load.', e);
+        }
+
+        // --- 1. Mobile Menu ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i');
+        const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+
+        function toggleMenu() {
+          mobileMenu.classList.toggle('hidden');
+          // Change icon
+          if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.setAttribute('data-feather', 'menu');
+          } else {
+            menuIcon.setAttribute('data-feather', 'x');
+          }
+          feather.replace(); // Re-draw icon
+        }
+        
+        menuBtn.addEventListener('click', toggleMenu);
+        // Close menu on link click
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', toggleMenu);
+        });
+
+        // --- 2. Smooth Scrolling ---
+        const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile, a[href^="#home"]');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+
+        // --- 3. Portfolio Modal ---
+        const portfolioModal = document.getElementById('portfolio-modal');
+        const modalContent = document.getElementById('modal-content');
+        // Updated selector to grab all clickable items in the new tabbed portfolio
+        const portfolioItems = document.querySelectorAll('#portfolio-content .group'); 
+        const closeModalBtn = document.getElementById('close-modal');
+
+        function openModal() {
+          portfolioModal.classList.remove('hidden');
+          setTimeout(() => {
+            portfolioModal.classList.add('opacity-100');
+            modalContent.classList.add('scale-100', 'opacity-100');
+            modalContent.classList.remove('scale-95', 'opacity-0');
+          }, 10);
+        }
+
+        function closeModal() {
+          modalContent.classList.remove('scale-100', 'opacity-100');
+          modalContent.classList.add('scale-95', 'opacity-0');
+          portfolioModal.classList.remove('opacity-100');
+          setTimeout(() => {
+            portfolioModal.classList.add('hidden');
+          }, 300);
+        }
+
+        // Apply click listener to all new portfolio items
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', openModal);
+        });
+        
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeModal);
+        }
+        // Close modal by clicking outside
+        if (portfolioModal) {
+            portfolioModal.addEventListener('click', function(e) {
+              if (e.target === portfolioModal) {
+                closeModal();
+              }
+            });
+        }
+        
+        // --- 4. Portfolio Tab System ---
+        const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+        const portfolioContents = document.querySelectorAll('.portfolio-tab-content');
+
+        portfolioTabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('data-tab');
+
+            // 1. Update Tab Buttons
+            portfolioTabs.forEach(t => {
+              t.classList.remove('active-tab', 'bg-orange-500', 'text-white');
+              t.classList.add('bg-zinc-700', 'text-gray-300');
+            });
+            tab.classList.add('active-tab', 'bg-orange-500', 'text-white');
+            tab.classList.remove('bg-zinc-700', 'text-gray-300');
+
+            // 2. Show Target Content
+            portfolioContents.forEach(content => {
+              if (content.id === targetId) {
+                content.classList.remove('hidden');
+                content.classList.add('animate-fadeIn'); // Add animation
+              } else {
+                content.classList.add('hidden');
+                content.classList.remove('animate-fadeIn');
+              }
+            });
+          });
+        });
+
+      });
+    </script>
+</body>
+</html>
