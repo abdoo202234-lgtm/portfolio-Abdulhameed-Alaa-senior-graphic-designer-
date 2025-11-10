@@ -423,7 +423,7 @@
                 </div>
                 <div>
                   <h4 class="text-xl font-semibold">Phone</h4>
-                  <p class="text-gray-300">01559553152</p>
+                  <p class="text-gray-300">+201559553152</p>
                 </div>
               </div>
               <!-- Mail -->
@@ -439,14 +439,14 @@
             </div>
             
             <!-- Contact Form -->
-            <form class="space-y-5 mt-10">
-              <input type="text" placeholder="Full Name" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors">
-              <input type="email" placeholder="Email Address" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors">
-              <textarea placeholder="Your Message..." rows="5" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors resize-none"></textarea>
-              <button type="submit" class="w-full bg-orange-500 text-white text-lg font-semibold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 hover:shadow-orange-500/50 transition-all duration-300 transform hover:-translate-y-1">
-                Send Message
-              </button>
-            </form>
+          <form onsubmit="sendWhatsApp(event)" class="space-y-5 mt-10">
+  <input id="name" type="text" placeholder="Full Name" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors">
+  <input id="email" type="email" placeholder="Email Address" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors">
+  <textarea id="message" placeholder="Your Message..." rows="5" class="w-full p-4 bg-zinc-700 rounded-lg border border-zinc-600 focus:border-orange-500 focus:ring-orange-500 focus:ring-1 outline-none transition-colors resize-none"></textarea>
+  <button type="submit" class="w-full bg-orange-500 text-white text-lg font-semibold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 hover:shadow-orange-500/50 transition-all duration-300 transform hover:-translate-y-1">
+    Send Message
+  </button>
+</form>
           </div>
           
          <!-- Map (with image) -->
@@ -615,6 +615,19 @@
         });
 
       });
+
+      function sendWhatsApp(e){
+  e.preventDefault();
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+  
+  window.open(`https://wa.me/201559553152?text=${text}`, "_blank");
+}
+
+
     </script>
 </body>
 </html>
